@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Acl extends Model
+class Role extends Model
 {
-    protected $fillable = ['id', 'user_id', 'functionality_id'];
+    protected $table = 'roles';
+    protected $fillable = ['id','title'];
     public $timestamps = false;
 }
-

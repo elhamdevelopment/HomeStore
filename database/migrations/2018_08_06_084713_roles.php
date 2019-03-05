@@ -2,7 +2,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Role extends Migration
+class Roles extends Migration
 {
     public function up()
     {
@@ -10,5 +10,10 @@ class Role extends Migration
             $table->increments('id');
             $table->char('title',30);
         });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('roles');
     }
 }
