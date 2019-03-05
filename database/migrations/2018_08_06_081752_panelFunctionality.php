@@ -12,7 +12,6 @@ class PanelFunctionality extends Migration
             $table->integer('panel_id');
             $table->integer('functionality_id');
         });
-
     }
 
     /**
