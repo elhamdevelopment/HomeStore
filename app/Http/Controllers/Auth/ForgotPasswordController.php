@@ -3,6 +3,7 @@
 namespace HomeStore\Http\Controllers\Auth;
 
 use HomeStore\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
@@ -28,5 +29,9 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+    public function index(Request $request)
+    {
+
     }
 }

@@ -20,5 +20,7 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        'http://localhost:8000/re',
+        'http://localhost:8000/register',
     ];
 }
