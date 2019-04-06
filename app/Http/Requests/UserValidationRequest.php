@@ -26,12 +26,15 @@ class UserValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'firstName' => ['required', 'string', 'max:60'],
-            'lastName' => ['required', 'string', 'max:60'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string', 'max:40'],
+            'last_name' => ['required', 'string', 'max:40'],
+            'email' => ['required', 'string', 'email', 'max:128', 'unique:users'],
+            'mobile' => ['required', 'string', 'max:11'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['string']
         ];
     }
+
     public function messages()
     {
         return [
@@ -40,14 +43,15 @@ class UserValidationRequest extends FormRequest
 //            'title.max:30' => 'حداکثر طول نام باید 30 حرف باشد.'
         ];
     }
+
     public function attributes()
     {
-        return ['firstName'=>'نام'];
+        return ['first_name' => 'نام'];
     }
 
     protected function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(JsonResponse(505,'اطلاعات ورودی معتبر نمی باشد.',$validator->errors()));
+        throw new HttpResponseException(createJsonResponse(505, 'اطلاعات ورودی معتبر نمی باشد.', $validator->errors()));
     }
 
 }

@@ -28,6 +28,7 @@ class Shops extends Migration
             $table->string('sendType');
             $table->string('sendLocation');
             $table->string('shopPrivateDomain');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

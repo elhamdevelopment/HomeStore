@@ -27,7 +27,12 @@ Route::get('/', function () {
 //    echo 1;
 //    return;
 //});
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/re', 'Auth\RegisterController@createUser');
+Route::get('/login', 'HomeController@showloginForm')->name('login');
+Route::get('/register', 'HomeController@showRegisterForm')->name('register');
+Route::get('/user', 'User\UserProfileController@getUser')->name('user');
+//Route::get('/login', function () {
+//    return view('auth/login');
+//});

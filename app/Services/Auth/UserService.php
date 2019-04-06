@@ -8,8 +8,10 @@
 
 namespace HomeStore\Services\Auth;
 
+use HomeStore\Models\Roles;
 use HomeStore\Models\Users;
 use \HomeStore\Repository\Repository;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserService
@@ -28,11 +30,28 @@ class UserService
         return $this->userContext->all();
     }
 
-    public function CreateUser(array $data)
+    public function CreateUser(array $data, $role)
     {
+        $data['password'] = Hash::make($data['password']);
+        $data += ["role_id" => 1];
         $user = $this->userContext->create($data);
         $this->userContext->save();
         return $user;
+    }
+
+    public function createRole(array $data)
+    {
+        $role = new Roles($data);
+        $role->title = 'admin';
+        $role->update($role->getAttributes(), $data);
+        $this->userContext->saveModel($role);
+        return $role;
+    }
+
+    public function getRoleByUser()
+    {
+        $role = new Roles(['id' => 1, 'title' => 'role name']);
+        return $role->users();
     }
 
     public function delete($id)

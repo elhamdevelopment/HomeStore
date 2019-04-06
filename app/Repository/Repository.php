@@ -5,6 +5,7 @@ namespace HomeStore\Repository;
 use HomeStore\Models\Roles;
 use HomeStore\Models\Users;
 use http\Client\Curl\User;
+use Illuminate\Database\Eloquent\Model;
 
 class Repository
 {
@@ -37,6 +38,16 @@ class Repository
         return $this->model->fill($data);
     }
 
+    public function saveModel(Model $model)
+    {
+      return  $model->save();
+    }
+
+    public function save()
+    {
+        return $this->model->save();
+    }
+
     public function update(array $data, $id, $attribute = "id")
     {
         return $this->model::where($attribute, '=', $id)->update($data);
@@ -62,10 +73,6 @@ class Repository
         return $this->model::where($attribute, '=', $value)->get($columns);
     }
 
-    public function save()
-    {
-        return $this->model->save();
-    }
 
     public function findWhere($where, $columns = ['*'], $or = false)
     {
