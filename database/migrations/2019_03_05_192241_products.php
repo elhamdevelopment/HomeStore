@@ -15,12 +15,17 @@ class Products extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('category_id');
-            $table->string('title');
-            $table->integer('price');
-            $table->boolean('isShow');
-            $table->string('imageUrl');
-            $table->string('description');
+            $table->integer('category_id')->unsigned();
+            $table->integer('shop_id')->unsigned();
+            $table->string('title',240);
+            $table->bigInteger('price')->default(0);
+            $table->boolean('is_show')->default(true);
+            $table->boolean('is_available')->default(true);
+            $table->boolean('is_discount')->default(false);
+            $table->string('brand',30)->nullable();
+            $table->string('image_url')->nullable();
+            $table->text('description')->nullable();
+            $table->decimal('total_rate')->nullable();
             $table->timestamps();
         });
     }

@@ -15,20 +15,28 @@ class Shops extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('shop_category_id');
-            $table->string('name');
+            $table->integer('shop_category_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->string('title');
+            $table->string('manager_name');
+            $table->string('photos')->nullable();
             $table->integer('city');
             $table->string('mobile');
-            $table->string('phone');
-            $table->string('email',60);
-            $table->string('website');
-            $table->string('postCode');
-            $table->text('address');
-            $table->string('nationalityCode');
-            $table->string('sendType');
-            $table->string('sendLocation');
-            $table->string('shopPrivateDomain');
-            $table->string('user_id');
+            $table->string('phone')->nullable();
+            $table->decimal('total_rate')->nullable()->default(0);
+            $table->string('description',240)->nullable();
+            $table->string('email',128);
+            $table->string('website',80)->nullable();
+            $table->string('post_code',10)->nullable();
+            $table->text('address')->nullable();
+            $table->string('send_type');
+            $table->integer('delivery_price')->default(0);
+            $table->string('delivery_duration');
+            $table->string('covered_area');
+            $table->string('location');
+            $table->integer('min_order');
+            $table->string('shop_private_domain');
+
             $table->timestamps();
         });
     }

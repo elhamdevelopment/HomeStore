@@ -15,6 +15,7 @@ class ShopCategory extends Migration
     {
         Schema::create('shop_category', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title',30);
             $table->timestamps();
         });
     }

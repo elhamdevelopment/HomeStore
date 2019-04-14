@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: reza
+ * user: reza
  * Date: 3/9/2019
  * Time: 7:44 PM
  */
@@ -30,18 +30,26 @@ class UserService
         return $this->userContext->all();
     }
 
+    public function updateProfile(array $data)
+    {
+        $user_id = auth()->id();
+        return $this->userContext->update($data, $user_id);
+    }
+
     public function CreateUser(array $data, $role)
     {
         $data['password'] = Hash::make($data['password']);
-        $data += ["role_id" => 1];
+        $data += ["role" => $role];
         $user = $this->userContext->create($data);
         $this->userContext->save();
         return $user;
     }
 
+
     public function createRole(array $data)
     {
         $role = new Roles($data);
+
         $role->title = 'admin';
         $role->update($role->getAttributes(), $data);
         $this->userContext->saveModel($role);

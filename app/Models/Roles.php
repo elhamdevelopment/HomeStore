@@ -10,8 +10,8 @@ class Roles extends Model
     protected $fillable = ['id', 'title'];
     public $timestamps = false;
 
-//    public function users()
-//    {
-//        return $this->hasMany('HomeStore\Models\Users');
-//    }
+    public function users()
+    {
+        return $this->hasMany('HomeStore\Models\Users');
+    }
 }

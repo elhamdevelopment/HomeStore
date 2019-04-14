@@ -20,8 +20,7 @@ class Users extends Migration
             $table->timestamp('last_login_date')->nullable();
             $table->timestamp('email_verified')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->unsignedInteger('role_id'); //changed this line
-            $table->rememberToken();
+            $table->unsignedInteger('role'); //changed this line
             $table->timestamps();
 
         });

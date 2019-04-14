@@ -7,20 +7,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Authenticatable implements  JWTSubject
+class Users extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
 
     protected $fillable = [
-        'avatar','first_name','last_name','credit', 'gender',
-        'email','password', 'mobile', 'last_login_date',
-        'email_verified', 'is_active','role_id'
+        'avatar', 'first_name', 'last_name', 'credit', 'gender',
+        'email', 'password', 'mobile', 'last_login_date',
+        'email_verified', 'is_active', 'role_id'
     ];
 
 
     protected $hidden = [
-        'password', 'remember_token','email_verified'
+        'password', 'remember_token', 'email_verified'
     ];
 
     // Rest omitted for brevity
@@ -42,7 +42,7 @@ class Users extends Authenticatable implements  JWTSubject
      */
     public function getJWTCustomClaims()
     {
-        return [];
+        return ['user_id' => $this->id];
     }
 
 //    public function setPasswordAttribute($password)

@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-
+Route::get('/restaurants', function () {
+    return view('restaurants');
+});
+Route::get('/detail', function () {
+    return view('restaurant-detail');
+});
 //Route::get('test','Controller@index');
 //Route::get('test2','Controller@registerUser');
 //Route::get('/tt', function () {
@@ -32,7 +37,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login', 'HomeController@showloginForm')->name('login');
 Route::get('/register', 'HomeController@showRegisterForm')->name('register');
-Route::get('/user', 'User\UserProfileController@getUser')->name('user');
+Route::get('/user', 'user\UserProfileController@getUser')->name('user');
 //Route::get('/login', function () {
 //    return view('auth/login');
 //});

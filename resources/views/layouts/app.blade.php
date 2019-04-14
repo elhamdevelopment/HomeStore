@@ -1,80 +1,145 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <title>رستوران</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/web.css') }}" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+<body dir="rtl">
+<div class="container">
+    <!-- Login Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa fa-user-secret fa-2x ml-2"></i>ورود</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="">
+                        <div class="form-group">
+                            <input type="email" name="userName" id="userName" class="form-control"
+                                   placeholder="آدرس ایمیل یا موبایل"
+                                   required>
+                            {{--<small id="helpId" class="text-muted">Help text</small>--}}
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" id="" class="form-control" placeholder="رمز عبور" required
+                                   aria-describedby="helpId">
+                            {{--<small id="helpId" class="text-muted">Help text</small>--}}
+                        </div>
+                        <div class="form-check">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="loginRememberMe" value="1">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">مرا به خاطر بسپار</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-block"><i class="fa fa-sign-in ml-1"></i>ورود
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div class="w-100">شما می توانید از طریق حساب گوگل خود وارد شوید.</div>
+                    <button type="button" class="btn btn-outline-danger" style="width: 50%"><i
+                                class="fa fa-google ml-1"></i>ورود با اکانت گوگل
+                    </button>
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        </div>
     </div>
+    {{-- Register Modal--}}
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ثبت نام</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" name="" id="" class="form-control" placeholder="آدرس ایمیل"
+                                   aria-describedby="helpId">
+                            {{--<small id="helpId" class="text-muted">Help text</small>--}}
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" class="form-control" placeholder="نام"
+                                   aria-describedby="helpId">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" class="form-control" placeholder="نام خانوادگی"
+                                   aria-describedby="helpId">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" class="form-control" placeholder="موبایل"
+                                   aria-describedby="helpId">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" id="" class="form-control" placeholder="رمز عبور"
+                                   aria-describedby="helpId">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" id="" class="form-control" placeholder="تکرار رمز عبور"
+                                   aria-describedby="helpId">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{--header--}}
+    <header class="container mt-1 py-2">
+        <div class="row justify-content-between">
+            <div class="">
+                <button type="button" class="btn btn-primary">رستوران <i class="fa fa-shopping-cart ml-1"></i></button>
+                <button type="button" class="btn btn-secondary">سوپر مارکت <i class="fa fa-product-hunt ml-1"></i>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-auto  pr-0 mr-0">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">ورود <i
+                                class="fa fa-user ml-1"></i></button>
+                    <button type="button" class="btn btn-secondary" data-target="#registerModal" data-toggle="modal">ثبت
+                        نام <i class="fa fa-registered ml-1"></i>
+                    </button>
+                </div>
+                {{--<div class="col-auto pt-2 ml-0 pl-0">--}}
+                    {{--<i class="fa fa-shopping-basket fa-2x text-primary"></i>--}}
+
+                {{--</div>--}}
+            </div>
+        </div>
+    </header>
+</div>
+
+<main class="py-4">
+    @yield('content')
+</main>
+
+{{--fotter--}}
+<footer class="bg-dark mx-0 px-0" style="height: 200px">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto d-flex align-items-end" style="height: 200px">
+                <label style="color: #ffffff">کلیه حقوق وب سایت محفوظ است</label>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
+<script src="{{asset('js/web.js')}}"></script>
 </html>

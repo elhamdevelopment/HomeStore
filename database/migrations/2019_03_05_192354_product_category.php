@@ -15,7 +15,10 @@ class ProductCategory extends Migration
     {
         Schema::create('product_category', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('title',240);
+            $table->string('icon','128');
+            $table->boolean('is_active');
+            $table->bigInteger('parent_id');
             $table->timestamps();
         });
     }
