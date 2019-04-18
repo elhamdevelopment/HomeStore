@@ -1,33 +1,48 @@
+// System Colors
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-150: #f4f4f4 !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
 
-// Body
+// Colors
+$blue: #3A86FF;
+$indigo: #6574cd;
+$purple: #663aa5;
+$pink: #FF006E;
+$red: #DD1C1A;
+$orange: #FB5607;
+$yellow: #FFBE0B;
+$green: #20BF38;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$gray: #808080;
+$gray-0: #f3f3f3;
+$gray-1: #848484;
+//----------
+
+// bg-color text-color variable
+$primary: $pink !default;
+$secondary:$gray-700 !default;
+$success:$green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$accent:$orange !default;
+
+// Body color variable
 $body-bg: #f8fafc;
 
 // Typography
 $font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
-$gray: #808080;
-$gray-0: #f3f3f3;
-$gray-1: #848484;
-$primary:#d11149;
-$secondary:     #f17105 !default;
-$success:       #1dbc2e !default;
-//$info:          $cyan !default;
-//$warning:       $yellow !default;
-//$danger:        $red !default;
-//$light:         $gray-100 !default;
-//$dark:          $gray-800 !default;
-//$success:$green;
-//$success:$green;

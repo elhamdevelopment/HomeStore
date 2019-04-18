@@ -25,7 +25,7 @@
                                 <input type="text" class="form-control border-primary" id="SearchLocation"
                                        placeholder="جستجو رستوران یا غذا">
                                 <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-primary"><i
+                                    <button type="button" class="btn btn-primary"><i
                                                 class="fa fa-search ml-1"></i>
                                     </button>
                                 </div>
@@ -98,7 +98,7 @@
             <div class="col-9">
                 <div class="row">
                     <div class="col-4 mb-2">
-                        <div class="card">
+                        <div class="card  text-center">
                             <div class="favorite-btn">
                                 <i class="fas fa-heart fa-lg" ></i>
                             </div>

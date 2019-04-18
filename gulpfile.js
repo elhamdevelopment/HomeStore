@@ -11,13 +11,27 @@ var sassOptions = {
 };
 var webScriptComponents = [
     'node_modules/jquery/dist/jquery.slim.min.js',
+    'node_modules/jquery/dist/jquery.min.js',
     'node_modules/flickity/dist/flickity.pkgd.min.js',
     'node_modules/popper.js/dist/umd/popper.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
-    'node_modules/@fortawesome/fontawesome-free/js/all.min.js'
+    'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
+    'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+    'resources/js/default.js'
+
+
     // 'resources/js/default.js',
 ];
-gulp.task('web-css', function () {
+var cssComponents = [
+    'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
+];
+gulp.task('cssWebComponents', function () {
+    return gulp.src(cssComponents)
+        .pipe(sass(sassOptions).on('error', sass.logError))
+        .pipe(concat('_web-component.scss'))
+        .pipe(gulp.dest('resources/sass/'))
+});
+gulp.task('web-css',['cssWebComponents'], function () {
     return gulp.src('resources/sass/app.scss')
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(concat('web.css'))

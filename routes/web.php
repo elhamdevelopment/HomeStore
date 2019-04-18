@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/order', function () {
+    return view('order');
+});
+
 Route::get('/restaurants', function () {
     return view('restaurants');
 });

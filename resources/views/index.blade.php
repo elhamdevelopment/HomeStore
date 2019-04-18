@@ -315,12 +315,12 @@
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
-                                                <i class="fa fa-mobile-phone"></i>
+                                                <i class="fas fa-mobile"></i>
                                             </div>
                                         </div>
                                         <input type="text" class="form-control" id="SearchLocation" placeholder="912*****">
                                         <div class="input-group-append">
-                                            <button type="button" class="btn btn-success"><i class="fa fa-send ml-1"></i> ارسال لینک
+                                            <button type="button" class="btn btn-success"><i class="fas fa-fighter-jet ml-1"></i> ارسال لینک
                                             </button>
                                         </div>
                                     </div>

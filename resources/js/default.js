@@ -1,10 +1,8 @@
 // $(document).ready(function () {
-// //     $('.carousel').flickity({
-// //         freeScroll: true,
-// //         autoPlay: true,
-// //         groupCells: true,
-// //         contain: true,
-// //         // prevNextButtons: false,
-// //         // pageDots: false
-// //     });
+// $("#quantity").TouchSpin();
 // });
+$("input[name='quantity']").TouchSpin();
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});

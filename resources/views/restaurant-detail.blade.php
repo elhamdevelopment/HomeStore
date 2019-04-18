@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid no-gutters bg-primary mb-2">
+{{--    @include('_buy-basket-partials');--}}
+    <div class="container-fluid no-gutters bg-light mb-2">
         <div class="container py-2">
             <div class="row  mb-4 p-2">
                 <div class="col-2 d-flex flex-column align-items-center">
@@ -394,12 +395,12 @@
                             <small>هزینه ارسال بعد از انتخاب آدرس نمایش داده می‌شود.</small>
                             <span class="d-block mt-2">تحویل غذا:</span>
                             <small class="d-block my-3 text-gray-light">ارسال به شما (تحویل در محل رستوران ندارد)</small>
-                            <button type="button" class="btn btn-success btn-block">تایید سفار ش</button>
+                            <button type="button" class="btn btn-white-border btn-raised btn-block">تایید سفار ش</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+{{----}}
 @endsection
