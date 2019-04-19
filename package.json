@@ -48,6 +48,7 @@
     "sass-loader": "^7.1.0"
   },
   "dependencies": {
-    "flickity": "^2.2.0"
+    "flickity": "^2.2.0",
+    "material-design-icons": "^3.0.1"
   }
 }

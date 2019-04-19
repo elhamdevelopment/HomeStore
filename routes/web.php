@@ -11,6 +11,25 @@
 |
 */
 
+//user dashboard
+Route::get('/dash', function () {
+    return view('user.dashboard');
+});
+Route::get('/profile', function () {
+    return view('user.user-profile');
+});
+Route::get('/address', function () {
+    return view('user.addressManage');
+});
+Route::get('/change-password', function () {
+    return view('user.change-password');
+});
+Route::get('/favourite', function () {
+    return view('user.favourite');
+});
+Route::get('/wallet', function () {
+    return view('user.wallet');
+});
 Route::get('/', function () {
     return view('index');
 });
@@ -18,7 +37,7 @@ Route::get('/order', function () {
     return view('order');
 });
 
-Route::get('/restaurants', function () {
+Route::get('/res', function () {
     return view('restaurants');
 });
 Route::get('/detail', function () {

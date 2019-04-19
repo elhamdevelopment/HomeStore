@@ -6,6 +6,7 @@
     <title>رستوران</title>
     <!-- Styles -->
     <link href="{{ asset('css/web.css') }}" rel="stylesheet">
+
 </head>
 <body dir="rtl">
 
@@ -20,6 +21,6 @@
 
 @include('partials._footer')
 
-</body>
 <script src="{{asset('js/web.js')}}"></script>
+</body>
 </html>
