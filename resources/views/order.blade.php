@@ -82,7 +82,7 @@
                             <div class="col-12 col-md-6 m-auto">
                                 <div class="d-flex flex-row justify-content-between font-size-11 mt-2 text-gray-light">
                                     <span>مبلغ سفارش</span>
-                                    <span>1330000 تومان</span>
+                                    <span>{{ number_format(12300000) }} تومان</span>
                                 </div>
                                 <hr>
                                 <div class="d-flex flex-row justify-content-between font-size-11 font-weight-light mt-2 text-accent">
@@ -92,7 +92,7 @@
                                 <hr>
                                 <div class="d-flex flex-row justify-content-between font-size-12 font-weight-bold  mt-2 text-success">
                                     <span>مبلغ قابل پرداخت</span>
-                                    <span> 130,0000 تومان</span>
+                                    <span>{{ number_format(50000000) }} تومان</span>
                                 </div>
                             </div>
                         </div>

@@ -15,10 +15,15 @@ class UserProfileController extends Controller
 {
     protected $userService;
 
+    public function profile()
+    {
+        return view('user.user-profile');
+    }
+
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
-        $this->middleware('jwt.auh');
+//        $this->middleware('jwt.auh');
 
     }
 

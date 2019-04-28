@@ -1,21 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="AdminApp">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>رستوران</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>پنل کاربری</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/perfect-scrollbar.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <header>header</header>
-    <main class="py-4">
-        @yield('content')
-    </main>
-    <footer>fotter</footer>
+<div class="app-admin-wrap">
+
+@include('partials.admin._shop-header')
+@include('partials.admin._shop-sidebar')
+
+    <!-- ============ Body content start ============= -->
+    <div class="main-content-wrap sidenav-open d-flex flex-column">
+        <main class="py-2">
+            @yield('content')
+        </main>
+
+        @include('partials.admin._shop-footer')
+    </div>
+
 </div>
+<script src="{{asset('js/admin.js')}}"></script>
 </body>
 </html>

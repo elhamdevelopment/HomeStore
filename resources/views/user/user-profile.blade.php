@@ -1,12 +1,10 @@
-@extends('layouts.user')
-
+@php
+     $template = getTemplate($role);
+@endphp
+@extends($template)
 @section('content')
     <div class="breadcrumb d-flex flex-row justify-content-between">
         <h1>داشبورد</h1>
-        {{--<ul>--}}
-        {{--<li><a href="#">داشبورد</a></li>--}}
-        {{--<li>نسخه 1</li>--}}
-        {{--</ul>--}}
         <button type="button" class="btn btn-accent btn-raised"><i
                     class="fas fa-save ml-1 bt-1">save</i>ثبت تغییرات
         </button>
@@ -18,19 +16,20 @@
                 <div class="card-body text-center">
                     <form action="">
 
-                    <div class="avatar box-shadow-2 mb-3">
-                        <img src="assets/images/faces/16.jpg" alt="">
-                        <input type="file" class="" id="inputGroupFile01" aria-describedby="">
-                    </div>
+                        <div class="avatar box-shadow-2 mb-3">
+                            <img src="/img/avatar-96.png" alt="">
+                            <input type="file" class="" id="inputGroupFile01" aria-describedby="">
+                        </div>
                     </form>
                     <h5 class="py-2">نام و نام خانودگی</h5>
 
-                    <div class="font-size-11 d-flex mt-3 col-10 m-auto py-2">
-                        <i class=" i-Credit-Card text-muted icon-ize-24 pl-2"></i>
-                        <span class="ml-auto">موجودی کیف پول</span>
-                        <h4 class="text-success text-left">12،0000 تومان</h4>
-                    </div>
-
+                    @if ($role=="user")
+                        <div class="font-size-11 d-flex mt-3 col-10 m-auto py-2">
+                            <i class=" i-Credit-Card text-muted icon-ize-24 pl-2"></i>
+                            <span class="ml-auto">موجودی کیف پول</span>
+                            <h4 class="text-success text-left">12،0000 تومان</h4>
+                        </div>
+                    @endif
 
                     <p class="text-muted font-size-10">آخرین زمان ورود روز دوشنبه 21 آذر 98</p>
                     <form action="">
@@ -70,7 +69,7 @@
                             </label>
 
                         </div>
-                                      </form>
+                    </form>
                 </div>
             </div>
         </div>

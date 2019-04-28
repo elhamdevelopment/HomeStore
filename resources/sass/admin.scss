@@ -1,2 +1,9 @@
 // Variables
 @import 'variables';
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "input-group";
+@import "pagination";
+@import "../../node_modules/flickity/dist/flickity";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "dest/admin-components";
+@import "admin-default";

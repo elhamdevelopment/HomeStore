@@ -36,6 +36,22 @@ function getControllerActions()
 
 }
 
+function getTemplate($role){
+    switch ($role)
+    {
+        case "admin":
+            return "layouts.admin";
+            break;
+        case "user":
+            return"layouts.user";
+            break;
+        case "shop":
+            return "layouts.shop";
+            break;
+        default:
+            return "layouts.user";
+    }
+}
 function createJsonResponse($status, $message, $data = '')
 {
     return response()->json([

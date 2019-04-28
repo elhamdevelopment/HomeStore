@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="iziToast-wrapper iziToast-wrapper-topRight"></div>
     {{--serach header--}}
     <div id="searchHeader" class="container-fluid no-gutters px-0">
         <div class="row justify-content-center mt-5">

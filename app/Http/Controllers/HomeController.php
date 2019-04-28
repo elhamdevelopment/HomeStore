@@ -21,12 +21,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('index');
     }
 
-    public function showLoginForm()
+    public function order()
     {
-        return view('auth.login');
+        return view('order');
+    }
+
+    public function restaurants()
+    {
+        return view('restaurants');
+    }
+    protected function restaurantDetail()
+    {
+        return view('restaurant-detail');
     }
 
     public function showRegisterForm()

@@ -2,122 +2,87 @@
 
 @section('content')
     <div class="row">
-        <div class="col-3 mb-2">
-            <div class="card text-right">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card">
                 <div class="favorite-btn">
-                    <i class="fas fa-heart fa-lg"></i>
+                    <i class="fas fa-trash fa-lg" title="حذف"></i>
                 </div>
-                <img src="img/food.jpg" alt="..." class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">هوم برگر سفارشی</h5>
-                    <small class="card-text">برگر گریل شده 100% گوشت، پنیر گودا، سس آلفردو
-                    </small>
-
-                    <div class="middle-line">
-                        <span>124</span> <i class="fa fa-user-o"></i>
-                        <span class="badge badge-success p-2"><i
-                                    class="fa fa-star"></i>4.6</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class=" d-flex flex-row justify-content-between">
-                        <span>120000 تومان</span>
+                <div class="card-body text-center">
+                    <img src="/img/shoplogo.jpg" alt="..." class="img-thumbnail">
+                    <h5 class="">شن</h5>
+                    <small class="card-text">فست فور</small>
+                    <div class="">
+                    <span class="star-rating">
+                            <i class="material-icons text-warning" style="width: 100%;"></i>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card text-right">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card">
                 <div class="favorite-btn">
-                    <i class="fas fa-heart fa-lg"></i>
+                    <i class="fas fa-trash fa-lg" title="حذف"></i>
                 </div>
-                <img src="img/food.jpg" alt="..." class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">هوم برگر سفارشی</h5>
-                    <small class="card-text">برگر گریل شده 100% گوشت، پنیر گودا، سس آلفردو
-                    </small>
-
-                    <div class="middle-line">
-                        <span>124</span> <i class="fa fa-user-o"></i>
-                        <span class="badge badge-success p-2"><i
-                                    class="fa fa-star"></i>4.6</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class=" d-flex flex-row justify-content-between">
-                        <span>120000 تومان</span>
+                <div class="card-body text-center">
+                    <img src="/img/shoplogo.jpg" alt="..." class="img-thumbnail">
+                    <h5 class="">شن</h5>
+                    <small class="card-text">فست فور</small>
+                    <div class="">
+                    <span class="star-rating">
+                            <i class="material-icons text-warning" style="width: 40%;"></i> 4.2
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card text-right">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card">
                 <div class="favorite-btn">
-                    <i class="fas fa-heart fa-lg"></i>
+                    <i class="fas fa-trash fa-lg" title="حذف"></i>
                 </div>
-                <img src="img/food.jpg" alt="..." class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">هوم برگر سفارشی</h5>
-                    <small class="card-text">برگر گریل شده 100% گوشت، پنیر گودا، سس آلفردو
-                    </small>
-
-                    <div class="middle-line">
-                        <span>124</span> <i class="fa fa-user-o"></i>
-                        <span class="badge badge-success p-2"><i
-                                    class="fa fa-star"></i>4.6</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class=" d-flex flex-row justify-content-between">
-                        <span>120000 تومان</span>
+                <div class="card-body text-center">
+                    <img src="/img/shoplogo.jpg" alt="..." class="img-thumbnail">
+                    <h5 class="">شن</h5>
+                    <small class="card-text">فست فور</small>
+                    <div class="">
+                    <span class="star-rating">
+                            <i class="material-icons text-warning" style="width: 100%;"></i>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card text-right">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card">
                 <div class="favorite-btn">
-                    <i class="fas fa-heart fa-lg"></i>
+                    <i class="fas fa-trash fa-lg" title="حذف"></i>
                 </div>
-                <img src="img/food.jpg" alt="..." class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">هوم برگر سفارشی</h5>
-                    <small class="card-text">برگر گریل شده 100% گوشت، پنیر گودا، سس آلفردو
-                    </small>
-
-                    <div class="middle-line">
-                        <span>124</span> <i class="fa fa-user-o"></i>
-                        <span class="badge badge-success p-2"><i
-                                    class="fa fa-star"></i>4.6</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class=" d-flex flex-row justify-content-between">
-                        <span>120000 تومان</span>
+                <div class="card-body text-center">
+                    <img src="/img/shoplogo.jpg" alt="..." class="img-thumbnail">
+                    <h5 class="">شن</h5>
+                    <small class="card-text">فست فور</small>
+                    <div class="">
+                    <span class="star-rating">
+                            <i class="material-icons text-warning" style="width: 100%;"></i>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-3 mb-2">
-            <div class="card text-right">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+            <div class="card">
                 <div class="favorite-btn">
-                    <i class="fas fa-heart fa-lg"></i>
+                    <i class="fas fa-trash fa-lg" title="حذف"></i>
                 </div>
-                <img src="img/food.jpg" alt="..." class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">هوم برگر سفارشی</h5>
-                    <small class="card-text">برگر گریل شده 100% گوشت، پنیر گودا، سس آلفردو
-                    </small>
-
-                    <div class="middle-line">
-                        <span>124</span> <i class="fa fa-user-o"></i>
-                        <span class="badge badge-success p-2"><i
-                                    class="fa fa-star"></i>4.6</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class=" d-flex flex-row justify-content-between">
-                        <span>120000 تومان</span>
+                <div class="card-body text-center">
+                    <img src="/img/shoplogo.jpg" alt="..." class="img-thumbnail">
+                    <h5 class="">شن</h5>
+                    <small class="card-text">فست فور</small>
+                    <div class="">
+                    <span class="star-rating">
+                            <i class="material-icons text-warning" style="width: 20%;"></i>
+                        </span>
                     </div>
                 </div>
             </div>
