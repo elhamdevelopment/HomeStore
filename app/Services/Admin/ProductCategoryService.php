@@ -6,14 +6,14 @@
  * Time: 10:42 PM
  */
 
-namespace HomeStore\Services\Auth;
+namespace HomeStore\Services\Admin;
 
 
 use HomeStore\Models\ProductCategory;
 use HomeStore\Models\productCategoryCategory;
 use HomeStore\Repository\Repository;
 
-class productCategoryCategoryService
+class productCategoryService
 {
     protected $productCategory;
 

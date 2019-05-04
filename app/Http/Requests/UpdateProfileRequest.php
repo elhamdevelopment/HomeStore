@@ -27,8 +27,10 @@ class UpdateProfileRequest extends FormRequest
     {
         return [
             'first_name' => ['required', 'string', 'max:40'],
+            'email' => ['required', 'string', 'max:60', 'email'],
+            'mobile' => ['required', 'string', 'max:11'],
             'last_name' => ['required', 'string', 'max:40'],
-            'avatar' => ['string']
+//            'avatar' => ['mimes:jpeg,jpg,png|max:10000'] // KB
         ];
     }
 
@@ -42,7 +44,7 @@ class UpdateProfileRequest extends FormRequest
 
     public function attributes()
     {
-        return ['first_name' => 'نام','last_name' => 'نام خانوادگی'];
+        return ['mobile'=>'موبایل','first_name' => 'نام', 'last_name' => 'نام خانوادگی', 'email' => 'ایمیل', 'password' => 'رمز عبور','avatar'=>'تصویر کاربر'];
     }
 
     protected function failedValidation(Validator $validator)

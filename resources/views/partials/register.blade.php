@@ -10,36 +10,40 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="#" method="#" id="registerForm">
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control" placeholder="آدرس ایمیل"
-                               aria-describedby="helpId">
-                        {{--<small id="helpId" class="text-muted">Help text</small>--}}
+                        <input type="email" name="email" id="" class="form-control" placeholder="آدرس ایمیل"
+                               data-rule-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control" placeholder="نام"
-                               aria-describedby="helpId">
+                        <input type="text" name="first_name" id="firstName" class="form-control" placeholder="نام"
+                               data-rule-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control" placeholder="نام خانوادگی"
-                               aria-describedby="helpId">
+                        <input type="text" name="last_name" id="last_name" class="form-control"
+                               placeholder="نام خانوادگی"
+                               data-rule-required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control" placeholder="موبایل"
-                               aria-describedby="helpId">
+                        <input type="text" name="mobile" id="mobile" class="form-control" placeholder="موبایل"
+                               maxlength="11" data-rule-required data-rule-minlength="11" data-rule-digits="true">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder="رمز عبور"
-                               aria-describedby="helpId">
+                        <input type="password" name="password" id="Password" data-rule-required="true"
+                               data-rule-minlength="6"
+                               class="form-control" placeholder="رمز عبور جدید">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder="تکرار رمز عبور"
-                               aria-describedby="helpId">
+                        <input type="password" id="confirmPassword" name="password_confirmation" data-rule-equalto="#Password"
+                               data-rule-minlength="6" data-rule-required="true"
+                               class="form-control" placeholder="تکرار رمز عبور">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">ثبت نام</button>
+                <button type="submit" class="btn btn-primary" form="registerForm"><i
+                            class="fas fa-save ml-1"></i>ثبت نام
+                </button>
             </div>
         </div>
     </div>

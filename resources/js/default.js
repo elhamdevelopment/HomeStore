@@ -7,20 +7,36 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 iziToast.settings({
-    timeout: 3000, // default timeout
-    resetOnHover: true,
     // icon: '', // icon class
+    theme: 'light', // dark
+    imageWidth: 50,
+    maxWidth: null,
+    zindex: 9999,
+    layout: 1,
+    balloon: false,
+    close: true,
+    closeOnEscape: false,
+    closeOnClick: false,
+    displayMode: 0, // once, replace
+    position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+    target: '',
+    targetFirst: true,
+    timeout: 3000,
+    rtl: true,
+    animateInside: true,
+    drag: true,
+    pauseOnHover: true,
+    resetOnHover: true,
+    progressBar: true,
+    progressBarColor: '',
+    progressBarEasing: 'linear',
+    overlay: false,
+    overlayClose: false,
+    overlayColor: 'rgba(0, 0, 0, 0.6)',
     transitionIn: 'flipInX',
     transitionOut: 'flipOutX',
-    position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-    onOpen: function () {
-        console.log('callback abriu!');
-    },
-    onClose: function () {
-        console.log("callback fechou!");
-    }
-});
-iziToast.show({
-    title: 'Hey',
-    message: 'What would you like to add?'
+    // transitionIn: 'fadeInUp',
+    // transitionOut: 'fadeOut',
+    transitionInMobile: 'fadeInUp',
+    transitionOutMobile: 'fadeOutDown',
 });

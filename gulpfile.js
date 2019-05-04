@@ -13,7 +13,8 @@ var sassOptions = {
 var admin_ScriptComponents = [
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/jquery/dist/jquery.min.js',
-    // 'node_modules/jalaali-js/index.js',
+    'node_modules/moment/min/moment.min.js',
+    'node_modules/moment-jalaali/build/moment-jalaali.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/jquery-validation/dist/localization/messages_fa.js',
     'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js',
@@ -36,15 +37,15 @@ var admin_ScriptComponents = [
     'node_modules/angularjs-toaster/toaster.min.js',
     'node_modules/ui-select/dist/select.min.js',
     'node_modules/angular-loading-bar/src/loading-bar.js',
+    'resources/js/admin-default.js', //setting and requirements,
     'resources/js/angularApp/app.js',
+    'resources/js/angularApp/filter/date-convert.js',
     'resources/js/angularApp/service/*.js',
-    'resources/js/angularApp/controller/*.js',
-    'resources/js/admin-default.js' //override
+    'resources/js/angularApp/controller/*.js'
 ];
 var web_ScriptComponents = [
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/jquery/dist/jquery.min.js',
-    // 'node_modules/jalaali-js/index.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/jquery-validation/dist/localization/messages_fa.js',
     'node_modules/popper.js/dist/umd/popper.min.js',
@@ -53,12 +54,14 @@ var web_ScriptComponents = [
     'node_modules/flickity/dist/flickity.pkgd.min.js',
     'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
     'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
-    'resources/js/default.js'
+    'resources/js/default.js',
+    'resources/js/web/*.js'
 ];
 
 var web_CssComponents = [
     'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
-    'node_modules/izitoast/dist/css/iziToast.min.css'
+    'node_modules/izitoast/dist/css/iziToast.min.css',
+    'node_modules/iranianbanklogos/dist/ibl.min.css'
 ];
 var admin_CssComponents = [
     'resources/sass/admin/lite-purple.min.css',
@@ -67,7 +70,8 @@ var admin_CssComponents = [
     'node_modules/adm-dtp/dist/ADM-dateTimePicker.min.css',
     'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
     'node_modules/izitoast/dist/css/iziToast.min.css',
-    'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'
+    'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css',
+    'node_modules/iranianbanklogos/dist/ibl.min.css'
     // 'node_modules/perfect-scrollbar/css/perfect-scrollbar.css'
 ];
 gulp.task('cssWebComponents', function () {
@@ -116,14 +120,14 @@ gulp.task('reload', ['web-css', 'web-script','admin-css','admin-script'], functi
 gulp.task('serve', ['web-css', 'web-script','admin-css','admin-script'], function () {
     browserSync.init({
         proxy: {
-            target: "http://localhost:8001/edit-shop",
+            target: "http://localhost:8000",
             ws: true
         },
         port: 8000
     });
 
     gulp.watch(['resources/sass/app.scss','resources/sass/*.scss', 'resources/sass/web/*.scss'], ['reload']);
-    gulp.watch(['resources/js/*.js','resources/js/angularApp/controller/*.js','resources/js/angularApp/service/*.js'], ['webScriptComponents','adminScriptComponents'],['reload']);
+    gulp.watch(['resources/js/*.js','resources/js/web/*.js','resources/js/angularApp/controller/*.js','resources/js/angularApp/service/*.js'], ['webScriptComponents','adminScriptComponents'],['reload']);
     gulp.watch(['resources/views/*persian-number.php','resources/views/layouts/*persian-number.php'], ['reload']);
 });
 

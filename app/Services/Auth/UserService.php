@@ -30,6 +30,12 @@ class UserService
         return $this->userContext->all();
     }
 
+    public function changePassword(array $password)
+    {
+        $user_id = auth()->id();
+        $password['password'] = Hash::make($password['password']);
+        return $this->userContext->update($password, $user_id);
+    }
     public function updateProfile(array $data)
     {
         $user_id = auth()->id();

@@ -40,4 +40,16 @@ class ProfileController extends Controller
         return createJsonResponse('200', 'success', $result);
     }
 
+    public function getUserFavorite(Request $request)
+    {
+        $result = $this->userService->updateProfile($request->all());
+        return createJsonResponse('200', 'success', $result);
+    }
+    public function deleteUserFavorite($id)
+    {
+        $result = $this->userService->delete($id);
+        return createJsonResponse('200', 'success', $result);
+    }
+
+
 }

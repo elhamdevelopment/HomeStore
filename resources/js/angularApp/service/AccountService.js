@@ -3,11 +3,13 @@
     this.Login = function (item) {
         return $http({
             method: "Post",
-            url: "../../api/Account/Login",
+            url: "/api/login",
             contentType: "application/json ; charset=utf-8",
             data: item
         }).then(function (response) {
-            return response.data
+            localStorage.setItem('token',response.data);
+            console.log(response.data);
+            return response;
         }, function errorCallBack(response) {
             var msg = response.data.message;
             if (msg !== undefined)

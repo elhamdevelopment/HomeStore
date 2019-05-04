@@ -20,6 +20,7 @@ class Shops extends Migration
             $table->string('title');
             $table->string('manager_name');
             $table->string('photos')->nullable();
+            $table->string('logo')->nullable();
             $table->integer('city');
             $table->string('mobile');
             $table->string('phone')->nullable();
@@ -36,7 +37,6 @@ class Shops extends Migration
             $table->string('location');
             $table->integer('min_order');
             $table->string('shop_private_domain');
-
             $table->timestamps();
         });
     }

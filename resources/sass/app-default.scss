@@ -1116,3 +1116,24 @@ div#searchHeader {
   font-size: 48px;
 }
 
+.error{
+  color: red;
+  border-color:red;
+}
+//.error::placeholder{
+//  color: red;
+//}
+
+//izitoust
+.iziToast.iziToast-color-red{
+  background-color: $danger;
+}
+.iziToast.iziToast-color-green{
+  background-color: $green;
+}
+.iziToast.iziToast-color-blue{
+   background-color: $blue;
+ }
+.iziToast.iziToast-color-yellow{
+  background-color: $yellow;
+}

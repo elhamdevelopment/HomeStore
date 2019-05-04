@@ -24,6 +24,7 @@
   font-weight: normal;
   font-style: normal;
   font-size: 18px; /* Preferred icon size */
+
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -42,6 +43,14 @@ color: #70657b;
 
   /* Support for IE. */
   font-feature-settings: 'liga';
+
+}
+.material-icons.hover{
+  padding: 5px;
+  &:hover{
+    background-color: #eae6e6;
+    border-radius: 50%;
+  }
 }
 
 /* Rules for sizing the icon. */
@@ -99,19 +108,17 @@ color: #70657b;
   color:#3a3554;
 }
 
-.error {
-  color: red;
-}
 
-select.ng-invalid,input.ng-invalid {
-  border-color: red;
-}
-select.ng-valid,input.ng-valid {
-  border-color: green;
-}
-select.ng-untouched,input.ng-untouched  {
-  border-color: #ccc;
-}
+
+//select.ng-invalid,input.ng-invalid {
+//  border-color: red;
+//}
+//select.ng-valid,input.ng-valid {
+//  border-color: green;
+//}
+//select.ng-untouched,input.ng-untouched  {
+//  border-color: #ccc;
+//}
 //----------------------------
 body {
   font-family: yekan;
@@ -1122,5 +1129,43 @@ width: 100%;
 }
 
 .sidebar-left .navigation-left .nav-item:hover .nav-item-hold {
+  color: #639;
+}
+
+.form-group label.error{
+  color: red;
+  border-color:red;
+}
+.error {
+  color: red;
+  border-color: red;
+}
+
+//izitoust
+.iziToast.iziToast-color-red{
+  background-color: red;
+}
+.iziToast.iziToast-color-green{
+  background-color: $green;
+}
+.iziToast.iziToast-color-blue{
+  background-color: $blue;
+}
+.iziToast.iziToast-color-yellow{
+  background-color: $yellow;
+}
+
+//badge
+.badge{
+  line-height: inherit;
+  font-size: 100%;
+}
+.badge-secondary{
+  background-color: $accent;
+}
+.badge-primary {
+  background-color: #639;
+}
+.text-purple{
   color: #639;
 }

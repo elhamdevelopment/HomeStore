@@ -9,27 +9,28 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" class="">
+                <form action="#" method="#" class="" id="loginForm">
                     <div class="form-group">
-                        <input type="email" name="userName" id="userName" class="form-control"
-                               placeholder="آدرس ایمیل یا موبایل"
-                               required>
+                            <input type="text" name="username" id="username" class="form-control"
+                                   placeholder="آدرس ایمیل یا موبایل"
+                                   required>
                         {{--<small id="helpId" class="text-muted">Help text</small>--}}
                     </div>
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder="رمز عبور" required
+                        <input type="password" name="password" id="password" class="form-control" placeholder="رمز عبور"
+                               required
                                aria-describedby="helpId">
                         {{--<small id="helpId" class="text-muted">Help text</small>--}}
                     </div>
                     <div class="form-check">
                         <label class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="loginRememberMe" value="1">
+                            <input type="checkbox" class="custom-control-input" name="remember" value="1">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">مرا به خاطر بسپار</span>
                         </label>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary btn-block"><i
+                        <button id="btnLogin" type="submit" class="btn btn-primary btn-block"><i
                                     class="fas fa-sign-in-alt ml-1"></i>ورود
                         </button>
                     </div>

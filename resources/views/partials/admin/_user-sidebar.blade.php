@@ -46,9 +46,9 @@
                 <div class="triangle"></div>
             </li>
             <li class="nav-item">
-                <a class="nav-item-hold" href="{{url('/')}}" target="_blank">
+                <a class="nav-item-hold" ng-controller="profileController" ng-click="logout()" href="#">
                     <i class="nav-icon i-Power-2"></i>
-                    <span class="nav-text">خروج</span>
+                    <span class="nav-text" >خروج </span>
                 </a>
                 <div class="triangle"></div>
             </li>

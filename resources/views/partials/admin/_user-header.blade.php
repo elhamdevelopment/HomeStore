@@ -43,7 +43,7 @@
                     <a class="dropdown-item" href="{{url('user/profile')}}">ویرایش پروفایل</a>
                     <a class="dropdown-item" href="{{url('/user/setting')}}">تنظیمات حساب</a>
                     <a class="dropdown-item" href="{{url('user/change-password')}}">تغییر رمز عبور</a>
-                    <a class="dropdown-item" href="{{url('/')}}">خروج</a>
+                    <a class="dropdown-item" ng-controller="profileController" ng-click="logout()" href="#">خروج</a>
                 </div>
             </div>
         </div>

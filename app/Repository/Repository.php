@@ -22,10 +22,13 @@ class Repository
         return $this->model->get();
     }
 
-    public function with(array $relations)
+    public function with($relations)
     {
-        $this->model = $this->Role::with($relations);
-        return $this;
+        return $this->model = $this->model::with($relations)->get();
+    }
+    public function whereWith($relations,$attribute, $value, $columns = array('*'))
+    {
+        return $this->model::where($attribute, '=', $value)->with($relations)->get($columns);
     }
 
     public function paginate($perPage = 25, $columns = array('*'))
@@ -57,7 +60,10 @@ class Repository
     {
         return $this->model::destroy($id);
     }
-
+    public function deleteWhere(array $where)
+    {
+        return $this->model->where($where)->destroy();
+    }
     public function find($id, $columns = array('*'))
     {
         return $this->model::find($id, $columns);
