@@ -13,21 +13,23 @@ var sassOptions = {
 var admin_ScriptComponents = [
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/popper.js/dist/umd/popper.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/nouislider/distribute/nouislider.min.js',
     'node_modules/moment/min/moment.min.js',
     'node_modules/moment-jalaali/build/moment-jalaali.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/jquery-validation/dist/localization/messages_fa.js',
     'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js',
-    'node_modules/popper.js/dist/umd/popper.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/datatables.net/js/jquery.dataTables.min.js',
     'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-    'resources/js/admin-dashboard.min.js',
     'node_modules/flickity/dist/flickity.pkgd.min.js',
     'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
     'node_modules/izitoast/dist/js/iziToast.min.js',
     'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+    'resources/js/admin-dashboard.min.js',
     'node_modules/angular/angular.min.js',
+    'resources/js/admin-default.js', //setting and requirements,
     'node_modules/angular-animate/angular-animate.min.js',
     'node_modules/angular-sanitize/angular-sanitize.min.js',
     'node_modules/angular-messages/angular-messages.min.js',
@@ -37,7 +39,6 @@ var admin_ScriptComponents = [
     'node_modules/angularjs-toaster/toaster.min.js',
     'node_modules/ui-select/dist/select.min.js',
     'node_modules/angular-loading-bar/src/loading-bar.js',
-    'resources/js/admin-default.js', //setting and requirements,
     'resources/js/angularApp/app.js',
     'resources/js/angularApp/filter/date-convert.js',
     'resources/js/angularApp/service/*.js',
@@ -46,10 +47,11 @@ var admin_ScriptComponents = [
 var web_ScriptComponents = [
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/jquery-validation/dist/jquery.validate.min.js',
-    'node_modules/jquery-validation/dist/localization/messages_fa.js',
     'node_modules/popper.js/dist/umd/popper.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/nouislider/distribute/nouislider.min.js',
+    'node_modules/jquery-validation/dist/jquery.validate.min.js',
+    'node_modules/jquery-validation/dist/localization/messages_fa.js',
     'node_modules/izitoast/dist/js/iziToast.min.js',
     'node_modules/flickity/dist/flickity.pkgd.min.js',
     'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
@@ -59,11 +61,14 @@ var web_ScriptComponents = [
 ];
 
 var web_CssComponents = [
+    // 'node_modules/nouislider/distribute/nouislider.min.css',
     'node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
     'node_modules/izitoast/dist/css/iziToast.min.css',
     'node_modules/iranianbanklogos/dist/ibl.min.css'
 ];
 var admin_CssComponents = [
+    'resources/sass/admin/iconsmind.css',
+    'node_modules/nouislider/distribute/nouislider.min.css',
     'resources/sass/admin/lite-purple.min.css',
     'node_modules/angular-loading-bar/src/loading-bar.css',
     'node_modules/angularjs-toaster/toaster.min.css',
@@ -88,7 +93,7 @@ gulp.task('cssAdminComponents', function () {
 });
 
 //WEB
-gulp.task('web-css',['cssWebComponents'], function () {
+gulp.task('web-css', function () {
     return gulp.src('resources/sass/app.scss')
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(concat('web.css'))
@@ -113,11 +118,11 @@ gulp.task('admin-script', function () {
         .pipe(gulp.dest('public/js'))
 });
 
-gulp.task('reload', ['web-css', 'web-script','admin-css','admin-script'], function () {
+gulp.task('reload', ['web-css','web-script'], function () {
     browserSync.reload();
 });
 
-gulp.task('serve', ['web-css', 'web-script','admin-css','admin-script'], function () {
+gulp.task('serve', ['web-css','web-script'], function () {
     browserSync.init({
         proxy: {
             target: "http://localhost:8000",

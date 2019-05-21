@@ -1,13 +1,13 @@
 <?php
 
-namespace HomeStore\Http\Controllers\admin;
+namespace EasyShop\Http\Controllers\admin;
 
-use HomeStore\Http\Requests\RegisterUserRequest;
-use HomeStore\Http\Requests\UpdateProfileRequest;
-use HomeStore\Models\Users;
-use HomeStore\Services\Auth\UserService;
+use EasyShop\Http\Requests\RegisterUserRequest;
+use EasyShop\Http\Requests\UpdateProfileRequest;
+use EasyShop\Models\Users;
+use EasyShop\Services\Auth\UserService;
 use Illuminate\Http\Request;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
 

@@ -17,5 +17,18 @@
             return response.data;
         });
     };
-
+    this.GetWalletTransaction = function () {
+        return $http({
+            method: "Post",
+            url: "/api/user/getWalletTransaction",
+            contentType: "application/json ; charset=utf-8",
+            headers: {
+                "Authorization": "Bearer " + token
+            },
+        }).then(function (response) {
+            return response.data
+        }, function errorCallBack(response) {
+            return response.data;
+        });
+    };
 });

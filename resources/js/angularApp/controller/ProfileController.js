@@ -3,8 +3,6 @@ adminApp.controller('profileController', ['$scope', 'ProfileService', function (
     $scope.getUserProfile = function () {
         ProfileService.GetProfile().then(function (response) {
             $scope.user = response.data;
-            $scope.user.created_at = moment($scope.user.created_at).format('dddd، jD jMMMM jYYYY [ساعت] LT');
-            console.log($scope.user);
         })
     };
     $scope.updateProfile = function (user) {
@@ -40,28 +38,31 @@ adminApp.controller('profileController', ['$scope', 'ProfileService', function (
     };
 
     //address
-    $scope.addAddress = function (item) {
+    $scope.addOrUpdateAddress = function (item) {
         var $form = $("#userAddressForm");
         if ($form.valid()) {
-            ProfileService.AddAddress(item).then(function (response) {
-                $scope.userAddress.push(response.data);
-                $('#addressModal').modal('hide');
-                iziToast.success({title: 'موفق', message: 'آدرس با موفقیت ثبت شد.'});
-            }, function errorCallBack(response) {
-                iziToast.error({title: 'خطا', message: 'بروز خطا در سیستم'});
+            console.log(item.id);
+            if(item.id !=0 && item.id != undefined && item.id != null ) {
 
-            });
-        }
-    };
-    $scope.updateAddress = function (item) {
-        var $form = $("#userAddressForm");
-        if ($form.valid()) {
-            ProfileService.UpdateAddress(item).then(function (response) {
-                iziToast.success({title: 'موفق', message: 'آدرس با موفقیت ثبت شد.'});
-            }, function errorCallBack(response) {
-                iziToast.error({title: 'خطا', message: 'بروز خطا در سیستم'});
+                ProfileService.UpdateAddress(item).then(function (response) {
+                    iziToast.success({title: 'موفق', message: 'آدرس با موفقیت ثبت شد.'});
+                }, function errorCallBack(response) {
+                    iziToast.error({title: 'خطا', message: 'بروز خطا در سیستم'});
 
-            });
+                });
+
+
+            }
+            else {
+                ProfileService.AddAddress(item).then(function (response) {
+                    $scope.userAddress.push(response.data);
+                    $('#addressModal').modal('hide');
+                    iziToast.success({title: 'موفق', message: 'آدرس با موفقیت ثبت شد.'});
+                }, function errorCallBack(response) {
+                    iziToast.error({title: 'خطا', message: 'بروز خطا در سیستم'});
+
+                });
+            }
         }
     };
     $scope.deleteAddress = function (index, id) {
@@ -77,6 +78,14 @@ adminApp.controller('profileController', ['$scope', 'ProfileService', function (
     $scope.getUserAddress = function () {
         ProfileService.GetUserAddress().then(function (response) {
             $scope.userAddress = response.data;
+        }, function errorCallBack(response) {
+            iziToast.error({title: 'خطا', message: response.message});
+        });
+    };
+    $scope.getAddressById = function (id) {
+        ProfileService.GetAddressById(id).then(function (response) {
+            $scope.address = response.data;
+            $('#addressModal').modal();
         }, function errorCallBack(response) {
             iziToast.error({title: 'خطا', message: response.message});
         });

@@ -37,7 +37,7 @@
                                 </div>
                             @endif
                             <span class="text-muted font-size-10 pl-2">آخرین زمان ورود</span>
-                            <span class="text-muted font-size-11" ng-model="user.last_login_date">@{{ user.created_at }} </span>
+                            <span class="text-muted font-size-11" ng-model="user.last_login_date">@{{ user.created_at | jalaliDate:'dddd، jD jMMMM jYYYY [ساعت] LT' }} </span>
                             <form action="">
                                 {{--<input type="file" class="form-control">--}}
 

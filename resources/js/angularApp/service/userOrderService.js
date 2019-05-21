@@ -8,7 +8,7 @@ adminApp.service("OrderService",function ($http,toaster) {
             method: "Post",
             url: "/api/user/order-detail",
             contentType: "application/json ; charset=utf-8",
-            data: {Id:id}
+            data: {id:id}
         }).then(function (response) {
             return response.data
         }, function errorCallBack(response) {

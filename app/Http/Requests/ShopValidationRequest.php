@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Http\Requests;
+namespace EasyShop\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

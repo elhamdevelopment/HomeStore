@@ -1,4 +1,22 @@
 $(document).ready(function () {
+
+
+    // var e = document.getElementById("range");
+    // noUiSlider.create(e,
+    //     {
+    //         start: [1],
+    //         connect: [true, false],
+    //         step: 1,
+    //         tooltips: true,
+    //         direction: 'rtl',
+    //         range: {
+    //             'min': [0],
+    //             'max': [5]
+    //         }
+    //     }
+    // );
+
+    //////////////////////////////////////////////////////////////
     //izitoast
     iziToast.settings({
         imageWidth: 50,
@@ -65,6 +83,7 @@ $(document).ready(function () {
     });
     //loading function local
     var oldValue = '';
+
     function loading($this, $enable) {
         if ($enable === true) {
             oldValue = $($this).html();
@@ -76,6 +95,7 @@ $(document).ready(function () {
             $($this).html(oldValue);
         }
     }
+
     // $('.btn').on('click', function () {
 //     var $this = this;
 //     loading($this, true);

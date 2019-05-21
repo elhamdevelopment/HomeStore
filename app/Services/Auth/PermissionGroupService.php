@@ -6,7 +6,7 @@
  * Time: 10:42 PM
  */
 
-namespace HomeStore\Services\Auth;
+namespace EasyShop\Services\Auth;
 
 
 class PermissionGroupService

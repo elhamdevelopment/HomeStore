@@ -1,8 +1,8 @@
 <?php
 
-namespace HomeStore\Http\Controllers\Auth;
+namespace EasyShop\Http\Controllers\Auth;
 
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller

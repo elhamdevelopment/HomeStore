@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Http\Controllers\shop;
+namespace EasyShop\Http\Controllers\shop;
 
-use HomeStore\Http\Controllers\Controller;
-use HomeStore\Services\shop\ShopService;
+use EasyShop\Http\Controllers\Controller;
+use EasyShop\Services\shop\ShopService;
 
 class ShopController extends Controller
 {

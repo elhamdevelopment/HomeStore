@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Http\Controllers;
+namespace EasyShop\Http\Controllers;
 
 class HomeController extends Controller
 {
@@ -22,6 +22,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('index');
+    }
+    public function indexMarket()
+    {
+        return view('index-market');
+    }
+    public function marketProductDetail()
+    {
+        return view('product-detail');
     }
 
     public function order()

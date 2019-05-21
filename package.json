@@ -59,6 +59,7 @@
     "moment-jalaali": "^0.8.3",
     "ng-file-upload": "^12.2.13",
     "ng-img-crop-full-extended": "^0.6.2",
+    "nouislider": "^13.1.5",
     "popper.js": "^1.12",
     "resolve-url-loader": "^2.3.1",
     "sass": "^1.15.2",

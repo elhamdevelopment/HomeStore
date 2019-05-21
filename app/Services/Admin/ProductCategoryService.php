@@ -6,12 +6,12 @@
  * Time: 10:42 PM
  */
 
-namespace HomeStore\Services\Admin;
+namespace EasyShop\Services\Admin;
 
 
-use HomeStore\Models\ProductCategory;
-use HomeStore\Models\productCategoryCategory;
-use HomeStore\Repository\Repository;
+use EasyShop\Models\ProductCategory;
+use EasyShop\Models\productCategoryCategory;
+use EasyShop\Repository\Repository;
 
 class productCategoryService
 {

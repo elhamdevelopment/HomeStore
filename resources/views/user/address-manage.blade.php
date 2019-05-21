@@ -15,7 +15,7 @@
                     </button>
                 </div>
                 <div class="card-body text-center">
-{{--@{{userAddress |json}}--}}
+
                     <div ng-repeat="address in userAddress">
                         <div class="d-flex flex-row justify-content-start">
                             <i class="material-icons text-purple pl-2" ng-show="address.is_default==true">radio_button_checked</i>
@@ -23,7 +23,7 @@
                             <span class="badge badge-secondary">@{{address.title}}</span>
                             <p class="ml-auto m-0 pr-2"><strong>آدرس: </strong>@{{address.address}}</p>
                             <i class="material-icons hover  ml-2 pointer" data-toggle="tooltip" title="حذف آدرس" ng-click="deleteAddress($index,address.id)">delete</i>
-                            <i class="material-icons hover pointer" title="ویرایش" data-toggle="modal" data-target="#addressModal">edit</i>
+                            <i class="material-icons hover pointer" title="ویرایش" ng-click="getAddressById(address.id)">edit</i>
                         </div>
                         <hr class="my-2">
                     </div>

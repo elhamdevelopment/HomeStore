@@ -17,7 +17,7 @@ class CreateUserWalletTransaction extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('amount');
-            $table->tinyInteger('transaction_type');
+            $table->tinyInteger('transaction_type')->comment('افزایش=1 -کاهش=0');
             $table->string('description')->nullable();
             $table->timestamps();
         });

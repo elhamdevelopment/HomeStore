@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Repository;
+namespace EasyShop\Repository;
 
-use HomeStore\Models\Roles;
-use HomeStore\Models\Users;
+use EasyShop\Models\Roles;
+use EasyShop\Models\Users;
 use http\Client\Curl\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -79,7 +79,15 @@ class Repository
         return $this->model::where($attribute, '=', $value)->get($columns);
     }
 
+    public function getByAllCondition($where, $columns = array('*'))
+    {
+        return $this->model::where($where)->get($columns);
+    }
 
+    public function getByCondition($where, $columns = array('*'))
+    {
+        return $this->model::where($where)->first($columns);
+    }
     public function findWhere($where, $columns = ['*'], $or = false)
     {
         $model = $this->model;

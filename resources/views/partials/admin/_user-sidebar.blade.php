@@ -25,7 +25,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-item-hold" href="{{url('user/favourite')}}">
+                <a class="nav-item-hold" href="{{url('user/favorite')}}">
                     <i class="nav-icon i-Tag-3"></i>
                     <span class="nav-text">مورد علاقه من</span>
                 </a>

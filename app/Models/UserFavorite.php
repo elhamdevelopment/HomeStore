@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Models;
+namespace EasyShop\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

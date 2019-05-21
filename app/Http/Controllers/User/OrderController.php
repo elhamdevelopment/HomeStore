@@ -1,9 +1,10 @@
 <?php
 
-namespace HomeStore\Http\Controllers\User;
+namespace EasyShop\Http\Controllers\User;
 
-use HomeStore\Services\user\OrderService;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Services\user\OrderService;
+use EasyShop\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -12,14 +13,19 @@ class OrderController extends Controller
     {
         return view('user.order-list');
     }
+    public function orderDetail()
+    {
+        return view('user.order-detail');
+    }
 
     public function __construct(OrderService $OrderService)
     {
         $this->orderService = $OrderService;
     }
 
-    public function getOrderById($id)
+    public function getOrderById(Request $request)
     {
+        $id=$request->input('id');
         $userOrder = $this->orderService->getOrderById($id);
         return createJsonResponse(200, 'success', $userOrder);
     }

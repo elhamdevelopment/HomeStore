@@ -11,4 +11,11 @@ adminApp.controller('walletController', ['$scope', 'WalletService', function ($s
         }
     };
 
+    $scope.getWalletTransaction = function () {
+        WalletService.GetWalletTransaction().then(function (response) {
+            $scope.walletTrans = response.data;
+        }, function errorCallBack(response) {
+            iziToast.error({title: 'خطا', message: response.message});
+        });
+    }
 }]);

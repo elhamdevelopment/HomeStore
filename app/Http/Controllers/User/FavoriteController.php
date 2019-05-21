@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Http\Controllers\User;
+namespace EasyShop\Http\Controllers\User;
 
-use HomeStore\Services\user\FavoriteService;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Services\user\FavoriteService;
+use EasyShop\Http\Controllers\Controller;
 
 class FavoriteController extends Controller
 {

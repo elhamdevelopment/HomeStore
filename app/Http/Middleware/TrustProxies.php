@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Http\Middleware;
+namespace EasyShop\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;

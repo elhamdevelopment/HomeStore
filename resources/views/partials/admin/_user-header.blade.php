@@ -24,7 +24,7 @@
                     <a href="{{url('/user/address')}}"><i class="i-Address-Book"></i> آدرس من</a>
                     <a href="{{url('/user/wallet')}}"><i class="i-Wallet-21"></i>کیف پول من</a>
                     <a href="{{url('/user/order')}}"><i class="i-Checkout"></i>سفارشات من</a>
-                    <a href="{{'/user/favourite'}}"><i class="i-Tag-3"></i>نشان شده</a>
+                    <a href="{{'/user/favorite'}}"><i class="i-Tag-3"></i>نشان شده</a>
                     <a href="{{url('/user/support')}}"><i class="i-Support"></i> پشتیبانی</a>
                 </div>
             </div>

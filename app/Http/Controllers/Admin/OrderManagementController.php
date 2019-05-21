@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Http\Controllers\admin;
+namespace EasyShop\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Http\Controllers\Controller;
 
 class OrderManagementController extends Controller
 {

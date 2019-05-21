@@ -6,10 +6,10 @@
  * Time: 7:44 PM
  */
 
-namespace HomeStore\Services\user;
+namespace EasyShop\Services\user;
 
-use HomeStore\Models\UserFavorite;
-use \HomeStore\Repository\Repository;
+use EasyShop\Models\UserFavorite;
+use \EasyShop\Repository\Repository;
 use Illuminate\Http\Request;
 
 

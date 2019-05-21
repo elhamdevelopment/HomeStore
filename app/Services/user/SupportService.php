@@ -6,10 +6,11 @@
  * Time: 7:44 PM
  */
 
-namespace HomeStore\Services\user;
+namespace EasyShop\Services\user;
 
-use HomeStore\Models\UserAddress;
-use \HomeStore\Repository\Repository;
+use EasyShop\Models\Support;
+use EasyShop\Models\UserAddress;
+use \EasyShop\Repository\Repository;
 
 
 class SupportService
@@ -17,18 +18,18 @@ class SupportService
     protected $supportContext;
     protected $repository;
 
-    public function __construct()
+    public function __construct(Support $support)
     {
-//        $this->supportContext = new Repository($address);
+        $this->supportContext = new Repository($support);
     }
 
     public function addSupport(array $data)
     {
         $user_id = auth()->id();
         $data += ["user_id" => $user_id];
-        $address = $this->supportContext->create($data);
+        $support = $this->supportContext->create($data);
         $this->supportContext->save();
-        return $address;
+        return $support;
     }
 
 }

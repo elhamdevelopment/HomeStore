@@ -16,11 +16,15 @@ class Comments extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
-            $table->bigInteger('parent_id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('subject');
-            $table->text('description');
+            $table->bigInteger('shop_id');
+            $table->tinyInteger('section')->comment('1=order, 2=product');
+            $table->bigInteger('section_id');
+            $table->bigInteger('reply_id')->nullable();
+            $table->tinyInteger('satisfied_status')->comment('راضی=1 ، ناراضی=-1 ، معمولی=0');
+            $table->tinyInteger('status')->comment('0=تایید شده ، 1= در انتظار بررسی ، 2= رد شده ، 3= زباله دان');
+            $table->string('title',100)->nullable();
+            $table->text('body');
+            $table->ipAddress('ip_address');
             $table->timestamps();
         });
     }

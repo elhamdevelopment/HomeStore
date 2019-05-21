@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    HomeStore\Http\Kernel::class
+    EasyShop\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    HomeStore\Console\Kernel::class
+    EasyShop\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    HomeStore\Exceptions\Handler::class
+    EasyShop\Exceptions\Handler::class
 );
 
 /*

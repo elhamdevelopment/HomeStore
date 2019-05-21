@@ -1,11 +1,12 @@
 <?php
 
-namespace HomeStore\Http\Controllers\User;
+namespace EasyShop\Http\Controllers\User;
 
-use HomeStore\Http\Requests\AddressRequest;
-use HomeStore\Services\user\AddressService;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Http\Requests\AddressRequest;
+use EasyShop\Services\user\AddressService;
+use EasyShop\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 class AddressController extends Controller
 {
     protected $addressService;
@@ -26,6 +27,13 @@ class AddressController extends Controller
         return createJsonResponse(200, 'success', $userAddress);
     }
 
+    public function getAddressById(Request $request)
+    {
+        $id = $request->input('id');
+        $userAddress = $this->addressService->getUserAddressById($id);
+        return createJsonResponse(200, 'success', $userAddress);
+    }
+
     public function addAddress(AddressRequest $request)
     {
         $address = $this->addressService->addAddress($request->all());
@@ -42,7 +50,7 @@ class AddressController extends Controller
 
     public function deleteAddress(Request $request)
     {
-        $id=$request->input('id');
+        $id = $request->input('id');
         $result = $this->addressService->deleteAddress($id);
         return createJsonResponse(200, 'success', $result);
 

@@ -1,6 +1,6 @@
 <?php
 
-use HomeStore\User;
+use EasyShop\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 

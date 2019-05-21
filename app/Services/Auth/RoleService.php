@@ -6,10 +6,10 @@
  * Time: 10:42 PM
  */
 
-namespace HomeStore\Services\Auth;
+namespace EasyShop\Services\Auth;
 
-use HomeStore\Models\Roles;
-use HomeStore\Repository\Repository;
+use EasyShop\Models\Roles;
+use EasyShop\Repository\Repository;
 use Illuminate\Support\Facades\Log;
 use Mockery\Exception;
 

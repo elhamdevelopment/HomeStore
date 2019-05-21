@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Http\Controllers\Auth;
+namespace EasyShop\Http\Controllers\Auth;
 
-use HomeStore\Http\Controllers\Controller;
-use HomeStore\Services\Auth\UserService;
+use EasyShop\Http\Controllers\Controller;
+use EasyShop\Services\Auth\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Hash;

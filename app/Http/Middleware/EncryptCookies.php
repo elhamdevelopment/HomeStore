@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Http\Middleware;
+namespace EasyShop\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

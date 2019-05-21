@@ -35,7 +35,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => HomeStore\User::class,
+        'model' => EasyShop\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

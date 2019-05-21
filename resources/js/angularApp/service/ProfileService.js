@@ -69,6 +69,21 @@
     };
 
     //address
+        this.GetAddressById = function (id) {
+            return $http({
+                method: "Post",
+                url: "/api/user/getAddressById",
+                contentType: "application/json ; charset=utf-8",
+                headers: {
+                    "Authorization": "Bearer " + token
+                },
+                data: {id: id}
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
     this.GetUserAddress = function () {
         return $http({
             method: "Post",
@@ -76,105 +91,105 @@
             contentType: "application/json ; charset=utf-8",
             headers: {
                 "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            console.log(response);
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
-    this.AddAddress = function (item) {
-        return $http({
-            method: "Post",
-            url: "/api/user/add-address",
-            contentType: "application/json ; charset=utf-8",
-            data:item,
-            headers: {
-                "Authorization": "Bearer " + token
-            }
+            },
         }).then(function (response) {
             return response.data
         }, function errorCallBack(response) {
             return response.data;
         });
     };
-    this.UpdateAddress = function (item) {
-        return $http({
-            method: "Post",
-            url: "/api/user/update-address",
-            contentType: "application/json ; charset=utf-8",
-            data:item,
-            headers: {
-                "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
-    this.DeleteAddress = function (id) {
-        return $http({
-            method: "Post",
-            url: "/api/user/delete-address",
-            contentType: "application/json ; charset=utf-8",
-            data:{id:id},
-            headers: {
-                "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
+        this.AddAddress = function (item) {
+            return $http({
+                method: "Post",
+                url: "/api/user/add-address",
+                contentType: "application/json ; charset=utf-8",
+                data: item,
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
+        this.UpdateAddress = function (item) {
+            return $http({
+                method: "Post",
+                url: "/api/user/update-address",
+                contentType: "application/json ; charset=utf-8",
+                data: item,
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
+        this.DeleteAddress = function (id) {
+            return $http({
+                method: "Post",
+                url: "/api/user/delete-address",
+                contentType: "application/json ; charset=utf-8",
+                data: {id: id},
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
 
-    //fav
-    this.DeleteFavorite = function (id) {
-        return $http({
-            method: "Post",
-            url: "/api/user/delete-favorite",
-            contentType: "application/json ; charset=utf-8",
-            data:{id:id},
-            headers: {
-                "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
-    this.AddFavorite = function (item) {
-        return $http({
-            method: "Post",
-            url: "/api/user/add-favorite",
-            contentType: "application/json ; charset=utf-8",
-            data:item,
-            headers: {
-                "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            console.log(response);
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
-    this.GetUserFavorite = function () {
-        return $http({
-            method: "Post",
-            url: "/api/user/get-favorite",
-            contentType: "application/json ; charset=utf-8",
-            headers: {
-                "Authorization": "Bearer " + token
-            }
-        }).then(function (response) {
-            return response.data
-        }, function errorCallBack(response) {
-            return response.data;
-        });
-    };
+        //fav
+        this.DeleteFavorite = function (id) {
+            return $http({
+                method: "Post",
+                url: "/api/user/delete-favorite",
+                contentType: "application/json ; charset=utf-8",
+                data: {id: id},
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
+        this.AddFavorite = function (item) {
+            return $http({
+                method: "Post",
+                url: "/api/user/add-favorite",
+                contentType: "application/json ; charset=utf-8",
+                data: item,
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                console.log(response);
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
+        this.GetUserFavorite = function () {
+            return $http({
+                method: "Post",
+                url: "/api/user/get-favorite",
+                contentType: "application/json ; charset=utf-8",
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            }).then(function (response) {
+                return response.data
+            }, function errorCallBack(response) {
+                return response.data;
+            });
+        };
 
-});
+    }
+);

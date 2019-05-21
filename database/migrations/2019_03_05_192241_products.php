@@ -22,6 +22,7 @@ class Products extends Migration
             $table->boolean('is_show')->default(true);
             $table->boolean('is_available')->default(true);
             $table->boolean('is_discount')->default(false);
+            $table->integer('discount')->default(0);
             $table->string('warranty',190)->nullable();
             $table->string('image_url')->nullable();
             $table->string('brand')->nullable();

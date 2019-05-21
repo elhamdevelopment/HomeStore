@@ -40,3 +40,7 @@ iziToast.settings({
     transitionInMobile: 'fadeInUp',
     transitionOutMobile: 'fadeOutDown',
 });
+
+$('#searchBtn').click(function () {
+    window.location = '/restaurant-list'
+});

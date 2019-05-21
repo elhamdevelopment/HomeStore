@@ -15,7 +15,7 @@
 @include('partials.register')
 @include('partials._header')
 
-<main class="py-3">
+<main class="my-3">
     @yield('content')
 </main>
 

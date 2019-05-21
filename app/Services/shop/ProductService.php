@@ -6,11 +6,11 @@
  * Time: 10:42 PM
  */
 
-namespace HomeStore\Services\shop;
+namespace EasyShop\Services\shop;
 
 
-use HomeStore\Models\Products;
-use HomeStore\Repository\Repository;
+use EasyShop\Models\Products;
+use EasyShop\Repository\Repository;
 
 class ProductService
 {

@@ -40,7 +40,7 @@
             "app/autoload.php"
         ],
         "psr-4": {
-            "HomeStore\\": "app/"
+            "EasyShop\\": "app/"
         },
         "classmap": [
             "database/seeds",

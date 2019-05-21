@@ -22,8 +22,10 @@ class CreateOrderTable extends Migration
             $table->integer('price');
             $table->integer('discount');
             $table->integer('discount_code');
+            $table->tinyInteger('delivery_type')->default(0)->comment('0= پیک رستوران ، 1= پیک سایت');
             $table->string('receiver_name');
             $table->string('description');
+            $table->string('address');
             $table->tinyInteger('status')->comment('0 = در حال تهیه ,1 = ارسال شده,1 = تایید شده = درحال سفارش')->default(0);
             $table->timestamps();
         });

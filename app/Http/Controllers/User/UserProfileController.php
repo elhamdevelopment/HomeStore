@@ -1,10 +1,10 @@
 <?php
 
-namespace HomeStore\Http\Controllers\User;
+namespace EasyShop\Http\Controllers\User;
 
-use HomeStore\Http\Requests\UpdateProfileRequest;
-use HomeStore\Services\Auth\UserService;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Http\Requests\UpdateProfileRequest;
+use EasyShop\Services\Auth\UserService;
+use EasyShop\Http\Controllers\Controller;
 
 class UserProfileController extends Controller
 {

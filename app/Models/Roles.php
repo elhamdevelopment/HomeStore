@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Models;
+namespace EasyShop\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Roles extends Model
 
     public function users()
     {
-        return $this->hasMany('HomeStore\Models\Users');
+        return $this->hasMany('EasyShop\Models\Users');
     }
 }

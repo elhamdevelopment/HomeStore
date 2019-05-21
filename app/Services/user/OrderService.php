@@ -6,31 +6,33 @@
  * Time: 7:44 PM
  */
 
-namespace HomeStore\Services\user;
+namespace EasyShop\Services\user;
 
-use HomeStore\Models\Orders;
-use \HomeStore\Repository\Repository;
+use EasyShop\Models\Orders;
+use \EasyShop\Repository\Repository;
 
 
 class OrderService
 {
     protected $orderContext;
+    protected $order;
 
     public function __construct(Orders $order)
     {
+        $this->order = $order;
         $this->orderContext = new Repository($order);
     }
 
     public function getUserOrder()
     {
         $user_id = auth()->id();
-        return $this->orderContext->with('Shops')->findAllBy('user_id',$user_id);
+        return $this->orderContext->whereWith('shop:id,title,logo,total_rate', 'user_id', $user_id);
     }
 
     public function getOrderById($id)
     {
         $user_id = auth()->id();
-        return $this->orderContext->with('Shops:photos,title')->findWhere(['user_id'=>$user_id, 'id'=>$id]);
-
+        return $this->order->where(['user_id' => 1, 'id' => $id])
+            ->with('shops', 'orderDetail', 'orderDetail.products')->first();
     }
 }

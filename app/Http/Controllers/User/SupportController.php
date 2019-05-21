@@ -1,9 +1,9 @@
 <?php
 
-namespace HomeStore\Http\Controllers\User;
+namespace EasyShop\Http\Controllers\User;
 
-use HomeStore\Services\user\SupportService;
-use HomeStore\Http\Controllers\Controller;
+use EasyShop\Services\user\SupportService;
+use EasyShop\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SupportController extends Controller

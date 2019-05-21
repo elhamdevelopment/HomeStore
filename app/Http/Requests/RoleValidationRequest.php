@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeStore\Http\Requests;
+namespace EasyShop\Http\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;

@@ -1,6 +1,7 @@
 adminApp.filter('jalaliDate', function () {
     return function (inputDate, format) {
-        var date = moment(inputDate);
-        return date.fromNow() + " " + date.format(format);
+        moment.loadPersian({usePersianDigits: true, dialect: 'persian-modern'});
+        var date = moment(inputDate).format(format);
+        return date;
     }
 });

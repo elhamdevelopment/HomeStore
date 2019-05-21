@@ -1,10 +1,10 @@
 <?php
 
-namespace HomeStore\Http\Controllers\Auth;
+namespace EasyShop\Http\Controllers\Auth;
 
-use HomeStore\Http\Controllers\Controller;
-use HomeStore\Http\Requests\RegisterUserRequest;
-use HomeStore\Services\Auth\UserService;
+use EasyShop\Http\Controllers\Controller;
+use EasyShop\Http\Requests\RegisterUserRequest;
+use EasyShop\Services\Auth\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
